@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+    <link rel="stylesheet" href="{% static 'css/std1.css' %}">
+</head>
+<body>
+    <h1>Student Input Form </h1>
+    <div class="container" align = 'center'>
+        {% if submitted %}
+        <h1>Student with the name:{{sname}} processsed successfully...</h1>
+        <h2>Enter next student information</h2>
+        {% endif %}
+        <form method="post">
+            {{form.as_p}} 
+            {% csrf_token %}  
+            <input type="submit" name="" value="Submit"> 
+        </form>
+    </div>
+</body>
+</html>
